@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Arrays</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #d9afd9, #97d9e1);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px 20px;
+      color: #333;
+    }
+
+    .container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 900px;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      color: #c81e0b;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      color: #bb0849;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    .output {
+      background: #f7f0ff;
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 20px;
+      font-size: 1.15em;
+      box-shadow: inset 0 0 10px rgba(90, 24, 154, 0.2);
+    }
+
+    .output p {
+      background: #ffffff;
+      margin: 12px 0;
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(90, 24, 154, 0.1);
+      transition: background 0.3s;
+    }
+
+    .output p:hover {
+      background: #e0c3fc;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #0eb25a;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #079d7d, #4edd55);
+      border-radius: 2px;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>JavaScript: Arrays</h2>
+    <h3>
+      1. Write a program to sort a JavaScript Array. <br>
+      2. Write a program to concatenate two array elements and store them in a new array. <br>
+      3. Write a program to remove the first element from a JavaScript Array.
+    </h3>
+
+    <hr />
+
+    <div class="output" id="outputArea"></div>
+  </div>
+
+  <script>
+    const output = document.getElementById("outputArea");
+
+    // Question 1
+    let numbers = [4, 3, 5, 1, 2, 6];
+    numbers.sort((a, b) => a - b);
+    output.innerHTML += `<p><span class="label">1.)</span> Sorted array: [${numbers.join(", ")}]</p>`;
+
+    // Question 2
+    let array1 = [1, 2, 3];
+    let array2 = [4, 5, 6];
+    let newArray = array1.concat(array2);
+    output.innerHTML += `<p><span class="label">2.)</span> Combined array: [${newArray.join(", ")}]</p>`;
+
+    // Question 3
+    let fruits = ["apple", "banana", "cherry", "date"];
+    let removedElement = fruits.shift();
+    output.innerHTML += `<p><span class="label">3.)</span> Array after removing first element: [${fruits.join(", ")}]</p>`;
+    output.innerHTML += `<p><span class="label">3.)</span> Removed element: ${removedElement}</p>`;
+  </script>
+</body>
+</html>
